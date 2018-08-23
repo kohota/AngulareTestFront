@@ -16,7 +16,7 @@ export class ContactsComponent implements OnInit {
   ngOnInit() {
     this.contactsService.getContacts().subscribe(data=>{
       this.listContacts=data;
-      this.pages=new Array(data.totalPages);
+      this.pages=new Array(data['totalPages']);
     },error=>{
       console.log("error in fetching data from database");
     });
@@ -25,7 +25,7 @@ export class ContactsComponent implements OnInit {
   doSearch(){
     this.contactsService.getResearchedContacts(this.motRecherche,this.currentPage).subscribe(data=>{
       this.listContacts=data;
-      this.pages=new Array(data.totalPages);
+      this.pages=new Array(data['totalPages']);
     },error=>{
       console.log("error fetching data with research option");
     });
