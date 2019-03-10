@@ -8,6 +8,8 @@ import { AboutComponent } from './about/about.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NewContactComponent } from './new-contact/new-contact.component';
+import { NoEmptyInputDirective } from './no-empty-input.directive';
+import { OnlyCharachterAllowedDirective } from './only-charachter-allowed.directive';
 
 const mesRoutes:Routes = [
 {  path:"contacts",component:ContactsComponent },
@@ -20,7 +22,9 @@ const mesRoutes:Routes = [
     AppComponent,
     ContactsComponent,
     AboutComponent,
-    NewContactComponent
+    NewContactComponent,
+    NoEmptyInputDirective,
+    OnlyCharachterAllowedDirective
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(mesRoutes),FormsModule,HttpClientModule
